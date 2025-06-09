@@ -1,0 +1,14 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int left=0, max=0;
+        int right=prices.length-1;
+        while(left<right){
+            if(left>=right) left++;
+            else{
+            max=Math.max(max,prices[right]-prices[left]);
+            right--;
+            }
+        }
+        return max;
+    }
+}
